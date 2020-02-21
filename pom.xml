@@ -8,5 +8,6 @@
   
   <modules>
   	<module>hellospringg</module>
+  	<module>emaillist03</module>
   </modules>
 </project>

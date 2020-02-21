@@ -1,10 +1,15 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  
   <parent>
-    <groupId>com.douzone</groupId>
-    <artifactId>spring--pratices</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+	    <groupId>com.douzone</groupId>
+	    <artifactId>spring--pratices</artifactId>
+	    <version>0.0.1-SNAPSHOT</version>
   </parent>
+  
+  
   <artifactId>emaillist03</artifactId>
   <packaging>war</packaging>
   
@@ -15,7 +20,23 @@
 	</properties>
 	
 	<dependencies>
+	
+		<!-- MariaDB JDBC Driver -->
+		<dependency>
+		    <groupId>org.mariadb.jdbc</groupId>
+		    <artifactId>mariadb-java-client</artifactId>
+		    <version>2.4.4</version>
+		</dependency>
 		
+	
+		
+		<!--  jstl -->
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>jstl</artifactId>
+		    <version>1.2</version>
+		</dependency>
+					
 		<!-- Spring Core, Context, AOP -->
 		<dependency>
 			<groupId>org.springframework</groupId>

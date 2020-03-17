@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.douzone.guestbook.Repository.GuestbookRepository;
 import com.douzone.guestbook.vo.GuestbookVo;
@@ -29,7 +30,7 @@ public class GuestbookController {
 	
 	@RequestMapping(value="/add",method = RequestMethod.POST)
 	public String add(GuestbookVo vo) {
-		System.out.println(vo.getName()+","+vo.getPassword()+","+vo.getContents());
+		
 		guestbookRepository.insert(vo);
 		return "redirect:/";
 	}
@@ -43,8 +44,7 @@ public class GuestbookController {
 	}
 	
 	@RequestMapping(value="/delete/{n}",method = RequestMethod.POST)
-	public String delete(@PathVariable("n")Long no,String password,Model model) {
-		System.out.println("NO : "+ no+","+"PASWORD : " +password);
+	public String delete(@PathVariable("n")Long no,@RequestParam(value="password", required=true, defaultValue ="")String password,Model model) {
 		
 		
 		boolean result = guestbookRepository.delete(no, password);

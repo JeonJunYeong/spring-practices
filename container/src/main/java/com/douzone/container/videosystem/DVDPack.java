@@ -12,4 +12,9 @@ public class DVDPack {
 		this.dvds=dvds;
 	}
 	
+	@Override
+	public String toString() {
+		return "DVDPack [title=" + title + ", dvds=" + dvds + "]";
+	}
+	
 }

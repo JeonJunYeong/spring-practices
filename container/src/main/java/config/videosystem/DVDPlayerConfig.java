@@ -16,11 +16,38 @@ public class DVDPlayerConfig {
 		
 		return new Avengers();
 	}
-	
-	
-	@Bean
-	public DVDPlayer dvdPlayer() {
+	//@Bean
+	public DVDPlayer dvdPlayer01() {
 		
 		return new DVDPlayer(avengers());
 	}
+	
+	//@Bean
+	public DVDPlayer dvdPlayer02(DigitalVideoDisc dvd) {
+		
+		return new DVDPlayer(dvd);
+	}
+	
+	@Bean
+	public DVDPlayer dvdPlayer03(DigitalVideoDisc dvd) {
+		
+		DVDPlayer dvdPlayer = new DVDPlayer();
+		dvdPlayer.setDvd(dvd);
+		
+		return dvdPlayer;
+		
+	}
+	
+	@Bean(name="player04")
+	public DVDPlayer dvdPlayer04(DigitalVideoDisc dvd) {
+		
+		DVDPlayer dvdPlayer = new DVDPlayer();
+		dvdPlayer.setDvd(dvd);
+		
+		return dvdPlayer;
+		
+	}
+	
+	
+	
 }
